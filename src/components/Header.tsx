@@ -11,8 +11,9 @@ export default function Header() {
         <>
             <header className="flex items-center justify-between w-full p-6 md:p-8 fixed top-0 z-50 bg-transparent mix-blend-multiply">
                 {/* Left: Logo */}
-                <Link href="/" className="text-2xl md:text-3xl font-bold tracking-tighter uppercase text-black hover:opacity-80 transition-opacity">
-                    DEVCilento
+                <Link href="/" className="flex items-center gap-2 text-2xl md:text-3xl font-bold tracking-tighter uppercase text-black hover:opacity-80 transition-opacity">
+                    <img src="/logo-dev.webp" alt="Logo DEVCilento" className="h-6 md:h-7 w-auto object-contain" />
+                    <span>DEVCilento</span>
                 </Link>
 
                 {/* Right: Pill Buttons */}
@@ -33,13 +34,13 @@ export default function Header() {
 
             {/* Overlay for mobile menu to close on click outside */}
             {isMenuOpen && (
-                <div 
-                    className="fixed inset-0 z-30 bg-black/20 backdrop-blur-sm" 
-                    onClick={() => setIsMenuOpen(false)} 
+                <div
+                    className="fixed inset-0 z-30 bg-black/20 backdrop-blur-sm"
+                    onClick={() => setIsMenuOpen(false)}
                 />
             )}
 
-            <DropdownMenu isOpen={isMenuOpen} />
+            <DropdownMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </>
     );
 }

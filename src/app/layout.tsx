@@ -10,10 +10,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "DEVCilento",
   description: "Sviluppo software su misura e sistemi di archiviazione intelligente",
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=4', rel: 'icon', type: 'image/x-icon' },
+    ],
+    shortcut: [
+      { url: '/favicon.ico?v=4', rel: 'shortcut icon' },
+    ],
+    apple: [
+      { url: '/favicon.ico?v=4', rel: 'apple-touch-icon' },
+    ],
+  },
 };
 
-import CookieBanner from "@/components/CookieBanner";
+import CircuitBackground from "@/components/CircuitBackground";
 import Script from "next/script";
+import CookieBanner from "@/components/CookieBanner";
 
 export default function RootLayout({
   children,
@@ -80,7 +92,7 @@ export default function RootLayout({
           id="linkedin-insight"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-             __html: `
+            __html: `
               _linkedin_partner_id = "linkedin-id-placeholder";
               window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
               window._linkedin_data_partner_ids.push(_linkedin_partner_id);
@@ -96,7 +108,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased text-foreground bg-background`}>
+      <body className={`${inter.variable} font-sans antialiased text-foreground bg-transparent relative min-h-screen`}>
+        <CircuitBackground />
         {children}
         <CookieBanner />
       </body>

@@ -36,15 +36,15 @@ export default function Footer() {
                         <h4 className="text-sm font-bold tracking-widest uppercase text-gray-500">Contatti</h4>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
                             <a href="mailto:info@devcilento.it" className="hover:text-white transition-colors">info@devcilento.it</a>
-                            <a href="tel:+390000000000" className="hover:text-white transition-colors">+39 000 000 0000</a>
+                            <a href="tel:+393715566672" className="hover:text-white transition-colors">+39 371 556 6672</a>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-4">
                         <h4 className="text-sm font-bold tracking-widest uppercase text-gray-500">Sede</h4>
                         <div className="flex flex-col gap-2 text-sm text-gray-300">
-                            <p>Vallo della Lucania (SA)</p>
-                            <p>Cilento, Italia</p>
+                            <p>Via Poeta Vincenzo D&apos;orsi</p>
+                            <p>Moio della Civitella (SA)</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ export default function Footer() {
                     <p>&copy; {new Date().getFullYear()} DEVCilento. Tutti i diritti riservati.</p>
                     <p className="hidden md:block">|</p>
                     <div className="flex items-center gap-4">
-                        <button 
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 setIsPrivacyOpen(true);
@@ -64,7 +64,7 @@ export default function Footer() {
                         >
                             Privacy Policy
                         </button>
-                        <button 
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 setIsCookieOpen(true);
@@ -75,16 +75,16 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
-                <p>P.IVA: 00000000000</p>
+                {/*<p>P.IVA: 00000000000</p>*/}
             </div>
 
-            <PrivacyModal 
-                isOpen={isPrivacyOpen} 
-                onClose={() => setIsPrivacyOpen(false)} 
+            <PrivacyModal
+                isOpen={isPrivacyOpen}
+                onClose={() => setIsPrivacyOpen(false)}
             />
-            <CookiePolicyModal 
-                isOpen={isCookieOpen} 
-                onClose={() => setIsCookieOpen(false)} 
+            <CookiePolicyModal
+                isOpen={isCookieOpen}
+                onClose={() => setIsCookieOpen(false)}
             />
         </footer>
     );

@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 interface DropdownMenuProps {
     isOpen: boolean;
+    onClose?: () => void;
 }
 
 const navLinks = [
@@ -11,7 +14,7 @@ const navLinks = [
     { label: "Contatti", href: "/contatti" },
 ];
 
-export default function DropdownMenu({ isOpen }: DropdownMenuProps) {
+export default function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
     return (
         <div
             className={`fixed top-[90px] right-6 md:right-8 w-[calc(100%-48px)] md:w-[400px] z-40 transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] origin-top ${isOpen
@@ -24,13 +27,14 @@ export default function DropdownMenu({ isOpen }: DropdownMenuProps) {
                 <div className="bg-white rounded-3xl p-8 shadow-sm">
                     <nav className="flex flex-col gap-6">
                         {navLinks.map((item) => (
-                            <a
+                            <Link
                                 key={item.label}
                                 href={item.href}
+                                onClick={onClose}
                                 className="text-2xl md:text-3xl font-medium tracking-tight hover:text-gray-500 transition-colors flex items-center gap-4 group"
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
                 </div>
