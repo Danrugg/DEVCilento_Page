@@ -38,7 +38,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
 
                         <h3 className="text-lg font-bold text-black mb-3">1. Titolare del Trattamento</h3>
                         <p className="mb-6">
-                            Il Titolare del Trattamento dei dati è DEVCilento, con sede legale e operativa nel Cilento, Italia. Per qualsiasi richiesta relativa alla privacy, è possibile contattarci all&apos;indirizzo email: info@devcilento.it.
+                            Il Titolare del Trattamento dei dati è DEVCilento, con sede legale e operativa in Moio della Civitella (SA). Per qualsiasi richiesta relativa alla privacy, è possibile contattarci all&apos;indirizzo email: info@devcilento.it.
                         </p>
 
                         <h3 className="text-lg font-bold text-black mb-3">2. Dati Raccolti e Finalità</h3>
@@ -49,7 +49,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                         <h3 className="text-lg font-bold text-black mb-3">3. Cookie di Google, Meta e LinkedIn</h3>
                         <p className="mb-6">
                             Nel rispetto della direttiva ePrivacy e del GDPR, il nostro sito implementa un banner cookie per la gestione del consenso.
-                            Utilizziamo <strong>Google Analytics</strong> per statistiche aggregate, il <strong>Pixel di Meta</strong> e il <strong>LinkedIn Insight Tag</strong> per misurare l&apos;efficacia delle nostre campagne di marketing. Tutti gli script di profilazione partono bloccati di default e vengono attivati solo previo consenso esplicito dell&apos;utente (impostando i flag di <em>ad_storage</em>, <em>analytics_storage</em>, ecc. su &quot;granted&quot;).
+                            Utilizziamo <strong>Google Analytics</strong> per statistiche aggregate, il <strong>Pixel di Meta</strong> e il <strong>LinkedIn Insight Tag</strong> per misurare l&apos;efficacia delle nostre campagne di marketing. Tutti gli script di profilazione partono bloccati di default e vengono attivati solo previo consenso esplicito dell&apos;utente.
                         </p>
 
                         <h3 className="text-lg font-bold text-black mb-3">4. Diritti GDPR dell&apos;Utente</h3>

@@ -82,7 +82,7 @@ export default function CircuitBackground() {
 
             const isMobile = w < 768;
             // Destinazione principale sul margine destro (95% mobile, 85% desktop)
-            const rightMargin = isMobile ? w * 0.95 : w * 0.85; 
+            const rightMargin = isMobile ? w * 0.95 : w * 0.85;
 
             // Punto di partenza dall'alto, spostato un po' dal centro
             let d = `M ${w * 0.6} 0`;
@@ -90,10 +90,10 @@ export default function CircuitBackground() {
             let currentY = 0;
 
             // Creazione di curve morbide di Bézier scendendo per la pagina
-            const segments = Math.max(3, Math.floor(h / 400)); 
+            const segments = Math.max(3, Math.floor(h / 400));
             for (let i = 1; i <= segments; i++) {
                 const targetY = (h / segments) * i;
-                
+
                 // Mantiene la linea sul margine destro con un'oscillazione molto dolce
                 const wobble = isMobile ? (w * 0.01) : (w * 0.03);
                 const targetX = rightMargin + (Math.sin(i * 1.5) * wobble);
@@ -105,7 +105,7 @@ export default function CircuitBackground() {
                 const cp2Y = currentY + (targetY - currentY) * 0.6;
 
                 d += ` C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${targetX} ${targetY}`;
-                
+
                 currentX = targetX;
                 currentY = targetY;
             }
@@ -119,18 +119,18 @@ export default function CircuitBackground() {
             let dLeft = `M ${leftStart} 0`;
             let currentXLeft = leftStart;
             let currentYLeft = 0;
-            
+
             // Punto di convergenza: quasi tocca la linea destra
             const marginOffset = isMobile ? 20 : 50;
-            const leftEndTarget = rightMargin - marginOffset; 
+            const leftEndTarget = rightMargin - marginOffset;
 
             for (let i = 1; i <= segments; i++) {
                 const targetY = (h / segments) * i;
                 const progressRatio = i / segments;
-                
+
                 // Convergenza verso rightMargin
                 const baseTargetX = leftStart + (leftEndTarget - leftStart) * progressRatio;
-                
+
                 // Oscillazione minore per evitare accavallamenti su testi
                 const wobbleLeft = isMobile ? (w * 0.01) : (w * 0.02);
                 const targetXLeft = baseTargetX + (Math.cos(i * 1.2) * wobbleLeft);
@@ -141,13 +141,13 @@ export default function CircuitBackground() {
                 const cp2YLeft = currentYLeft + (targetY - currentYLeft) * 0.6;
 
                 dLeft += ` C ${cp1XLeft} ${cp1YLeft}, ${cp2XLeft} ${cp2YLeft}, ${targetXLeft} ${targetY}`;
-                
+
                 currentXLeft = targetXLeft;
                 currentYLeft = targetY;
             }
             // Fine corsa per Path Sinistro
             dLeft += ` L ${currentXLeft} ${h + 200}`;
-            
+
             setPathLeftD(dLeft);
         };
 
@@ -204,9 +204,9 @@ export default function CircuitBackground() {
                             ref={pathRefLeft}
                             d={pathLeftD}
                             fill="none"
-                            stroke="#27272a" 
+                            stroke="#27272a"
                             strokeWidth={dimensions.width < 768 ? "1" : "2"}
-                            strokeLinejoin="round" 
+                            strokeLinejoin="round"
                             strokeLinecap="round"
                             style={{
                                 transition: 'stroke-dashoffset 0.1s linear',

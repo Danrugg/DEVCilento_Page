@@ -5,11 +5,11 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
     {
-        question: "Chi tocca i miei documenti?",
-        answer: "Solo il team DEVCilento. Non usiamo corrieri esterni. Dal tuo scaffale allo scanner, i documenti restano sempre sotto la nostra supervisione diretta."
+        question: "Qual è il vostro approccio allo sviluppo software?",
+        answer: "Non assembliamo soluzioni pre-confezionate. Progettiamo e sviluppiamo architetture digitali su misura. Ogni riga di codice è scritta per ottimizzare le performance, garantire la sicurezza e assicurare la scalabilità del prodotto finale."
     },
     {
-        question: "Ingombrate l'ufficio?",
+        question: "Utilizzate template o CMS tradizionali?",
         answer: "No. Il nostro setup On-Site è compatto e silenzioso. Lavoriamo in un angolo senza disturbare il tuo staff: tu lavori, noi digitalizziamo."
     },
     {
@@ -50,8 +50,8 @@ export default function FAQ() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex flex-col gap-6">
                         {faqs.map((faq, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="bg-white p-8 md:p-10 rounded-3xl border border-blue-950 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center group"
                             >
                                 <button
@@ -67,11 +67,10 @@ export default function FAQ() {
                                         )}
                                     </div>
                                 </button>
-                                
-                                <div 
-                                    className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
-                                        openIndex === index ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
-                                    }`}
+
+                                <div
+                                    className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
+                                        }`}
                                 >
                                     <p className="text-gray-600 leading-relaxed font-light text-base md:text-lg text-center md:text-left">
                                         {faq.answer}

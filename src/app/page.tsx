@@ -12,11 +12,9 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <ServicesGrid />
+
         <div className="bg-transparent">
-            <LogisticMethod />
-        </div>
-        <div className="bg-transparent">
-            <FAQ />
+          {/*<FAQ />*/}
         </div>
       </main>
       <Footer />

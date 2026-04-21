@@ -27,7 +27,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-6 max-w-sm">
                     <h2 className="text-3xl font-bold tracking-tight uppercase">DEVCilento</h2>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                        Sviluppiamo software su misura e sistemi di archiviazione intelligente per eliminare la &quot;carta morta&quot; e far crescere il tuo business.
+                        Progettiamo l'infrastruttura tecnologica per il tuo successo. Sviluppiamo software su misura, ecosistemi e-commerce e soluzioni basate sui dati per rendere il tuo business scalabile, efficiente e pronto alle sfide del mercato digitale.
                     </p>
                 </div>
 
